@@ -1,0 +1,17 @@
+Database
+
+Table - events
+Schema
+- visitor_id integer not null
+- session_id integer not null
+- session_start datetime
+- session_end datetime
+- page_Visited varchar(255)
+
+Query- "SELECT ee.visitor_id, ee.session_id, ee.session_start, ee.session_end FROM events ee
+        WHERE CONCAT(ee.visitor_id, ee.session_id)
+        IN
+        (SELECT CONCAT(e.visitor_id, e.session_id) FROM events e WHERE e.page_Visited='pricing')
+        AND
+        TIMESTAMPDIFF(SECOND, session_end, session_start) > 45
+        GROUP by ee.visitor_id, ee.session_id HAVING COUNT(*)=2;"
