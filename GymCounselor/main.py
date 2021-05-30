@@ -15,7 +15,7 @@ class SessionEventsAnalysis:
         file_path : str
             Relative/Absolute path of the required Excel file.
 
-    All tasks in GC Tasks.doc file
+    All tasks in (GC Tasks.doc) file
 
     Task 1:
         Table - events
@@ -69,7 +69,7 @@ class SessionEventsAnalysis:
         filtered = users_sessions_merge[columns]
         filtered.index.rename("Sl.no", inplace=True)
 
-        # Here we Export the required data to User and Session Data.csv
+        # Here we Export the required data to UserSessionData.csv
         filtered.to_csv("UserSessionData.csv")
         if send is True:
             # Used for static purpose.
