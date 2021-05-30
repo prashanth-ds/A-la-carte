@@ -113,9 +113,9 @@ class SessionEventsAnalysis:
         col2/col1, col3/col2 and so on). Export the result into a separate csv.
         """
 
-        ratios = [None]  # Since First column has not basis here for taking ratios, we initialize it as None.
+        ratios = [None]  # Since First column has no basis here for taking ratios, we initialize it as None.
         for i in range(len(self.session_sum_sheet.columns) - 1):
-            #  Here we divide / take ratio of two consecutive columns like (col2/col1, col3/col2 and so on).
+            #  Here we divide/take ratio of two consecutive columns like (col2/col1, col3/col2 and so on).
             ratios.append(self.session_sum_sheet[self.session_sum_sheet.columns[i + 1]][0] / self.session_sum_sheet[self.session_sum_sheet.columns[i]][0])
 
         # Here we append the generated ratios to the DataFrame.
@@ -131,7 +131,7 @@ class SessionEventsAnalysis:
 
         """
 
-        # Here we retrieve the filtered data generated from static to_csv function and filter it for number of 
+        # Here we retrieve the filtered data generated from static to_csv() function and filter it for number of 
         # visitors on each day mentioned. 
         visitors_data = self.to_csv(send=True).groupby("event_date").count()['visitor_id']
         data = go.Bar(x=visitors_data.index, y=visitors_data, name="No. of visitors")
@@ -188,6 +188,7 @@ solution.count_rows()
 solution.column_ratio()
 solution.visitors_graph()
 solution.payload_segregation()
+
 
 
 
