@@ -15,6 +15,8 @@ class SessionEventsAnalysis:
         file_path : str
             Relative/Absolute path of the required Excel file.
 
+    All tasks in GC Tasks.doc file
+
     Task 1:
         Table - events
         Schema
