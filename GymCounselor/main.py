@@ -188,3 +188,6 @@ solution.count_rows()
 solution.column_ratio()
 solution.visitors_graph()
 solution.payload_segregation()
+
+
+
